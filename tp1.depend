@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1379900752 source:c:\users\julio\workspace\tp\tp1\grafo.c
+	"grafo.h"
+	<stdio.h>
+	<stdlib.h>
+
+1379900180 c:\users\julio\workspace\tp\tp1\grafo.h
+
+1379900191 source:c:\users\julio\workspace\tp\tp1\tp1.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"grafo.h"
+

@@ -1,0 +1,22 @@
+CC = gcc
+CFLAGS = -Wall -g
+PROGFLAGS = 
+EXECUTABLE_NAME = TP1
+
+TP1: tp1.o
+	$(CC) $(CFLAGS) tp1.o -o $(EXECUTABLE_NAME)
+
+TP1.o: tp1.c grafo.c
+	$(CC) $(CFLAGS) -c tp1.c -o tp1.o
+
+run: TP1
+	./$(EXECUTABLE_NAME) $(PROGFLAGS)
+
+compile: TP1
+
+build:
+	make clean
+	make compile
+
+clean clear:
+	rm *.o $(EXECUTABLE_NAME)

@@ -1,0 +1,40 @@
+#ifndef GRAFO_H_INCLUDED
+#define GRAFO_H_INCLUDED
+#define MAXNUMVERTICES 100
+#define MAXNUMARESTAS 4500
+#define MAXTAM 100
+enum boolean {
+    true = 1, false = 0
+};
+
+typedef  enum boolean  bool;
+
+typedef int TipoValorVertice;
+typedef float TipoPeso;
+typedef struct TipoGrafo{
+    TipoPeso Mat[MAXNUMVERTICES + 1][MAXNUMVERTICES + 1];
+    int NumVertices;
+    int NumArestas;
+} TipoGrafo;
+typedef int TipoApontador;
+typedef long TipoChave;
+typedef struct TipoItem{
+    TipoChave Chave;
+}TipoItem;
+typedef int TipoIndice;
+typedef TipoItem TipoVetor[MAXTAM + 1];
+
+void FGVazio(TipoGrafo *Grafo);
+void InsereAresta(TipoValorVertice *V1, TipoValorVertice *V2, TipoPeso *Peso, TipoGrafo *Grafo);
+bool ListaAdjVazia(TipoValorVertice *Vertice, TipoGrafo *Grafo);
+TipoApontador PrimeiroListaAdj(TipoValorVertice *Vertice, TipoGrafo *Grafo);
+void ProxAdj(TipoValorVertice *Vertice, TipoGrafo *Grafo, TipoValorVertice *Adj, TipoPeso *Peso, TipoApontador *Prox, bool *FimListaAdj);
+void ImprimeGrafo(TipoGrafo *Grafo);
+
+void RefazInd(TipoIndice Esq, TipoIndice Dir, TipoItem *A, TipoPeso *P, TipoValorVertice *Pos);
+void Constroi(TipoItem *A, TipoPeso *P, TipoValorVertice *Pos, int n);
+TipoItem RetiraMinInd(TipoItem *A, TipoPeso *P, TipoValorVertice *Pos, int n);
+void DiminuiChaveInd(TipoIndice i, TipoPeso ChaveNova, TipoItem *A, TipoPeso *P, TipoValorVertice *Pos);
+void Dijkstra(TipoGrafo *Grafo, TipoValorVertice *Raiz, TipoValorVertice *Destino);
+
+#endif // GRAFO_H_INCLUDED
